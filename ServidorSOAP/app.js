@@ -2,7 +2,7 @@ const soap = require('soap');
 const xml = require('fs').readFileSync('esquemaServicio.wsdl', 'utf8');
 const express = require('express');
 
-const { verificarDigito, saludar } = require('./modules/servicios');
+const { verificarDigito, generarNombrePropio } = require('./modules/servicios');
 
 const error = (nombreFuncion, subCodigo, texto) => {
   throw {
@@ -23,12 +23,12 @@ let servicio = {
         if (rut === null) error('digitoVerificador', 'rpc:BadArguments', 'Rut invalido');
         return verificarDigito({ rut });
       },
-      saludo: ({ sexo, nombre, apellidoPaterno, apellidoMaterno }) => {
+      nombrePropio: ({ sexo, nombre, apellidoPaterno, apellidoMaterno }) => {
         if (nombre === null
           || apellidoPaterno === null
           || apellidoMaterno === null
           || sexo === null) error('saludo', 'rpc:BadArguments', 'Al menos un parametro es invalido');
-        return saludar({ sexo, nombre, apellidoPaterno, apellidoMaterno });
+        return generarNombrePropio({ sexo, nombre, apellidoPaterno, apellidoMaterno });
       }
     }
   }

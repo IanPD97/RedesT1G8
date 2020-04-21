@@ -13,7 +13,7 @@ module.exports = {
     return { verificador: modulo };
   },
 
-  saludar: ({ sexo, nombre, apellidoPaterno, apellidoMaterno }) => {
+  generarNombrePropio: ({ sexo, nombre, apellidoPaterno, apellidoMaterno }) => {
     const formatoNombrePropio = nombre => { return nombre[0].toUpperCase() + nombre.slice(1).toLowerCase(); }
     const prefijo = (sexo === 'M') ? "Sr." : "Sra.";
     const nombresFormato = nombre
@@ -22,7 +22,7 @@ module.exports = {
       .map(formatoNombrePropio);
     const apellidoPaternoFormato = formatoNombrePropio(apellidoPaterno);
     const apellidoMaternoFormato = formatoNombrePropio(apellidoMaterno);
-    return { saludo: [prefijo, ...nombresFormato, apellidoPaternoFormato, apellidoMaternoFormato].join(' ') };
+    return { nombrePropio: [prefijo, ...nombresFormato, apellidoPaternoFormato, apellidoMaternoFormato].join(' ') };
   }
 
 
