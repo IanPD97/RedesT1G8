@@ -4,10 +4,24 @@
       <p>Ingrese sexo, nombre(s), apellido paterno y apellido materno</p>
     </div>
     <form @submit.prevent="ingresarNombre">
-      <input type="text" v-model="sexo" name="sexo" placeholder="Ingrese sexo..." />
+      <select v-model="sexo" name="sexo">
+        <option disabled value>Seleccione su sexo</option>
+        <option value="M">Hombre</option>
+        <option value="F">Mujer</option>
+      </select>
       <input type="text" v-model="nombre" name="nombre" placeholder="Ingrese nombres..." />
-      <input type="text" v-model="apellidoPaterno" name="paterno" placeholder="Ingrese ap Paterno..." />
-      <input type="text" v-model="apellidoMaterno" name="materno" placeholder="Ingrese ap Materno..." />
+      <input
+        type="text"
+        v-model="apellidoPaterno"
+        name="paterno"
+        placeholder="Ingrese ap Paterno..."
+      />
+      <input
+        type="text"
+        v-model="apellidoMaterno"
+        name="materno"
+        placeholder="Ingrese ap Materno..."
+      />
       <input type="submit" value="Ingresar" class="btn" />
     </form>
   </div>
