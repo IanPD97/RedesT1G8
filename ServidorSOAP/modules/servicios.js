@@ -25,5 +25,4 @@ module.exports = {
     return { nombrePropio: [prefijo, ...nombresFormato, apellidoPaternoFormato, apellidoMaternoFormato].join(' ') };
   }
 
-
 };

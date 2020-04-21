@@ -34,10 +34,18 @@ let servicio = {
   }
 };
 
+const puerto = 8001;
 
 var app = express();
-app.listen(8001, function () {
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, soapaction, Accept");
+  next();
+});
+
+app.listen(puerto, function () {
   soap.listen(app, '/esquemaServicio', servicio, xml, function () {
-    console.log('server initialized');
+    console.log('servidor iniciado en puerto:', puerto);
   });
 });
