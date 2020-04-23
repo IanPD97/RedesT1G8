@@ -52,7 +52,10 @@ export default {
         apellidoMaterno: this.apellidoMaterno
       };
       this.$emit("ingresar-nombre", nuevoNombre);
-      this.title = "";
+      this.sexo = "";
+      this.nombre = "";
+      this.apellidoPaterno = "";
+      this.apellidoMaterno = "";
     }
   }
 };

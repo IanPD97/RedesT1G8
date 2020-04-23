@@ -28,7 +28,7 @@ export default {
         digito: undefined
       };
       this.$emit("ingresar-rut", nuevoRUT);
-      this.title = "";
+      this.numero = "";
     }
   }
 };
