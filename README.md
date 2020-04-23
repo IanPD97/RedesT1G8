@@ -17,7 +17,7 @@ El procedimiento para obtener el digito verificador se hace mediante la función
 El procedimiento para obtener un nombre propio se hace mediante la función `nombrePropio()` el cual recibe como parametro un objeto `{ sexo: <'M'/'F'>, nombre: <nombre>, apellidoPaterno: <apellido paterno>, apellidoMaterno: <apellido materno> }`, la función retorna un objeto `{ nombrePropio: <nombre propio> }`, en caso de recibir algún dato invalido retorna un error infromando el problema.
 ## Cliente SOAP
 Cliente del servicio SOAP, permite usar las funcionalidades expuestas por el servicio en el servidor.
-###Instalacion
+### Instalacion
 ```
 cd frontend_soap
 npm install

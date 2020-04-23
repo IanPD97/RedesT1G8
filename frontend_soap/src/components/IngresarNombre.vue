@@ -14,13 +14,13 @@
         type="text"
         v-model="apellidoPaterno"
         name="paterno"
-        placeholder="Ingrese ap Paterno..."
+        placeholder="Ingrese apellido paterno..."
       />
       <input
         type="text"
         v-model="apellidoMaterno"
         name="materno"
-        placeholder="Ingrese ap Materno..."
+        placeholder="Ingrese apellido materno..."
       />
       <input type="submit" value="Ingresar" class="btn" />
     </form>
