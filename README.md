@@ -1,25 +1,11 @@
+REST
 
-## Servidor SOAP
-### Instalacion
-Desde la carpeta principal del proyecto.
-```
-cd  ServidorSOAP
-npm install
-node app.js
-```
-El servidor confirmará el estado de ejecución.
-### Conexion
-Los clientes deben obtener el archivo WSDL de la direccion `http://localhost:8001/esquemaServicio?wsdl`
-#### Digito verificador
-El procedimiento para obtener el digito verificador se hace mediante la función `digitoVerificador()` el cual recibe como parametro un objeto `{ rut: <numero de  rut> }`, la función retorna un objeto `{ verificador: <digito verificador> }`, en caso de recibir un rut no valido retorna un error infromando el problema.
-#### Nombre propio
-El procedimiento para obtener un nombre propio se hace mediante la función `nombrePropio()` el cual recibe como parametro un objeto `{ sexo: <'M'/'F'>, nombre: <nombre>, apellidoPaterno: <apellido paterno>, apellidoMaterno: <apellido materno> }`, la función retorna un objeto `{ nombrePropio: <nombre propio> }`, en caso de recibir algún dato invalido retorna un error infromando el problema.
-## Cliente SOAP
-Cliente del servicio SOAP, permite usar las funcionalidades expuestas por el servicio en el servidor.
-###Instalacion
-```
-cd frontend_soap
-npm install
-npm run serve
-```
-El cliente viene por defecto configurado para levantar la pagina web en la direccion `http://localhost:8080/ `
+- Se debe descargar un servidor Wamp o xampp para poder correr código php, configurarlo adecuadamente para que no haya problemas
+entre los puertos, finalmente tenerlo en funcionamiento, encendido. (wamp parece más fácil de configurar)
+- Una vez instalado el servidor aparecerá una carpeta con el nombre en el disco C, ya sea wamp o xampp, dentro de esta carpeta hay otra con el nombre "www", ahí es donde se deben dejar las carpetas servidor o los servidores rest.
+- Dejamos la carpeta "2020 REST" en la carpeta "www" del servidor descargado
+
+- Entonces podemos acceder al servidor se debe ingresar el URL: http://localhost/2020%20REST/servidor.php
+- Para ingresar a los clientes: http://localhost/2020%20REST/ClienteRest_nombre.html
+- http://localhost/2020%20REST/ClienteRest_rut.html
+
