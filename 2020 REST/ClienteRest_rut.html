@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cliente REST rut</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width-device width, initial scale=1.0">
+	<style type="text/css">
+		h1{
+			text-align: center;
+			color: #00F
+			border-bottom:dotted #0000FF;
+			width: 50%;
+			margin: auto;
+		}
+		table{
+			border:1px solid #f00;
+			padding:20px 50px;
+			margin-top: 50px;
+		}
+		body{
+			background-color: #FFC;
+		}
+	</style>
+
+	<script>
+		function solonumeros(e){
+			key=e.keyCode || e.which;//almacena la entrada del teclado
+			teclado=String.fromCharCode(key);//almacenar lo que haya en la entrada del teclado
+			numeros='0123456789';
+			especiales='46';
+			teclado_especial=false;
+			for(var i in especiales){
+				if(key==especiales[i]){
+					teclado_especial=true;
+				}
+			}
+			if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+				return false;
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<h1>Verificación digito verificador del RUT</h1>
+	<form name="form1" method="get" action="servidor.php">
+		<table border="0" align="center">
+		    
+		    <tr>
+		    	<td>Ingrese RUT: </td>
+			      <td><label for="seccion"></label>
+			      <input type="text" name="rut" id="rut" placeholder="Ej: 19777888" onkeypress="return solonumeros(event)" maxlength="8" required>
+			      <td> - </td>
+			      <td>
+		      		<select name="dig_verif" id="dig_verif">
+				      	<optgroup label="Dígito verificador">
+				      		<option>1</option>
+				      		<option>2</option>
+				      		<option>3</option>
+				      		<option>4</option>
+				      		<option>5</option>
+				      		<option>6</option>
+				      		<option>7</option>
+				      		<option>8</option>
+				      		<option>9</option>
+				      		<option>K</option>
+				      	</optgroup>
+		      	</td>
+			  </td>
+		    </tr>
+		    <tr>
+		      <td>&nbsp;</td>
+		      <td>&nbsp;</td>
+		    </tr>
+		    <tr>
+		      <td align="center"><input type="submit" name="enviar" id="enviar" value="Enviar"></td>
+		      <td align="center"><input type="reset" name="Borrar" id="Borrar" value="Borrar"></td>
+		    </tr>
+  		</table>
+	</form>	
+	<!--<div>
+		<h1>Verificación digito verificador del RUT</h1>
+		<form action="http://localhost/2020 REST/servidor.php/?" method="GET">
+			<p>Ingrese su rut: <input type="text" id="rut" name="rut" placeholder="Ej: 19555888-7" required></p>
+			<input type="submit" name="enviar">
+		</form>
+	</div>
+    -->
+</body>
+</html>
