@@ -1,4 +1,3 @@
-# RedesT1G8
 
 ## Servidor SOAP
 ### Instalacion
