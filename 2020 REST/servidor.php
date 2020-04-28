@@ -37,7 +37,7 @@
 
 
 <?php
-    header("Content-Type:application/json", "Content-Type: text/html; charset=utf-8");
+    header("Content-Type:application/json");
 
     if(isset($_REQUEST['nombres'],$_REQUEST['paterno'],$_REQUEST['materno'],$_REQUEST['genero']))
     {
@@ -48,13 +48,14 @@
         else{
             $genero = "Sra.";
         }
-        $nombres = ucwords(strtolower($_REQUEST['nombres']));
-        $paterno = ucwords(strtolower($_REQUEST['paterno']));
-        $materno = ucwords(strtolower($_REQUEST['materno']));
+        $nombres = ucwords(mb_strtolower($_REQUEST['nombres'],'UTF-8'));
+        $paterno = ucwords(mb_strtolower($_REQUEST['paterno'],'UTF-8'));
+        $materno = ucwords(mb_strtolower($_REQUEST['materno'],'UTF-8'));
         $nombreCompleto = $genero . " " . $nombres . " " . $paterno . " " . $materno;
         echo $nombreCompleto;
     }
-    elseif(isset($_REQUEST['rut'])){}
+    elseif(isset($_REQUEST['rut'])){
+    }
     else{
         echo "Error, no se encuentran datos.";
     }
