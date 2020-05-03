@@ -18,9 +18,11 @@ El procedimiento para obtener un nombre propio se hace mediante la función `nom
 ## Cliente SOAP
 Cliente del servicio SOAP, permite usar las funcionalidades expuestas por el servicio en el servidor.
 ### Instalacion
+Desde la carpeta principal del proyecto.
 ```
 cd frontend_soap
 npm install
 npm run serve
 ```
+### Ejecución
 El cliente viene por defecto configurado para levantar la pagina web en la direccion `http://localhost:8080/ `
