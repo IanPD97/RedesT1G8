@@ -1,13 +1,13 @@
-REST
+# REST
 
-Descarga del servidor Wamp o Xampp
+## Descarga del servidor Wamp o Xampp
 
 - Se debe descargar un servidor Wamp o xampp para poder correr código php, configurarlo adecuadamente, aquí un enlace a un tutorial de instalación de servidor Wamp para windows. Enlace: https://www.youtube.com/watch?v=n6CVi4pBSCE (1) Descargar una versión para php desde la 5.4.3 en adelante.
 - Tener presente la carpeta en donde se guardará el servidor, se recomienda en el disco local C
 - Poner google Chrome como navegador por defecto
 - En caso de que el servidor arroje problemas con el puerto utilizado, en el mismo tutorial de instalación sugerido (1), aparece el método de solución a dicho problema.
 
-Para abrir los archivos php y html de REST
+## Para abrir los archivos php y html de REST
 
 - Una vez instalado el servidor aparecerá una carpeta con el nombre en el disco C, ya sea wamp o xampp, dentro de esta carpeta hay otra con el nombre "www", ahí es donde se deben dejar los proyectos.
 - Descargamos el repositorio de github a nuestra máquina local.
