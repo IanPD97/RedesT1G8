@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cliente REST nombre</title>
+	<meta charset="utf-8"> 
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script src="metodos.js"></script>
+	<script type="text/javascript">
+
+		$("#enviar").click(function () {
+			var parameters = {};
+			parameters.apellidoPaterno = $("#apellidoPaterno").val();
+			parameters.apellidoMaterno = $("#apellidoMaterno").val();
+			parameters.nombre = $("#nombre").val();
+			parameters.sexo = $("#sexo").val();
+			console.log(parameters);
+			$.ajax({
+			    type: "POST",
+			    contentType: 'application/json; charset=utf-8',
+			    url: "http://localhost:8003/nombrePropio",
+			    data: JSON.stringify(parameters),
+			    dataType: "json",
+			    success: function (data) {
+			        console.log(data);
+			    },
+			    error: function (xhr, ajaxOptions, thrownError) {
+			        console.log(xhr);
+			        //alert(xhr.status + " " + thrownError);
+			    }
+	    	});
+		});
+
+
+
+
+	/*	$(function() { 
+  			$('#form1').on('submit', function(e) { 
+	    		e.preventDefault();
+	  			var jsonData=$(this).serializeArray()
+	    		.reduce(function(a, z) { a[z.name] = z.value;return a; }, {});
+	    		console.log(jsonData);
+  			});
+		});	*/
+	</script>
+
+</head>
+
+<body>
+	<h1>Ingrese los datos de su nombre</h1>
+	<form name="form1" method="get">
+
+		<p class="center-content">Ingrese apellido paterno: </p>
+		<p class="center-content"><input type="text" name="apellidoPaterno" id="apellidoPaterno" class="field" placeholder="apellidoPaterno" onkeypress="return sololetras(event)" required></p>
+
+		<p class="center-content">Ingrese apellido materno: </p>
+		<p class="center-content"><input type="text" name="apellidoMaterno" class="field" id="apellidoMaterno" placeholder="apellidoMaterno" onkeypress="return sololetras(event)" required></p>
+
+
+		<p class="center-content">Ingrese sus Nombres: </p>
+		<p class="center-content"><input type="text" name="nombre" class="field" id="nombre" placeholder=" nombre1 nombre2" onkeypress="return sololetras(event)" required></p>
+
+		<p class="center-content">Seleccione su sexo: </p>
+		<p class="center-content"><select name="sexo" class="field" id="sexo">
+			<optgroup label="Sexo">
+				<option>M</option>
+				<option>F</option>
+				</optgroup>
+			</select>
+		</p>
+
+		<p class="center-content">
+			<tr>
+			    <td><input type="submit" name="enviar" class="btn btn-green" id="enviar" value="Enviar"></td>
+			</tr>
+		</p>
+		<p>Respuesta: </p>
+		<p id="respuesta" name="respuesta"></p>
+
+	</form>	
+
+</body>
+</html>
