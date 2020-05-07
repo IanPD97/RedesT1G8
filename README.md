@@ -1,5 +1,6 @@
 # RedesT1G8
-
+## Requisitos
+Tanto el servidor como el cliente requieren `Node JS` instalado en el equipo para su funcionamiento, link de [descarga](https://nodejs.org/es/download/).
 ## Servidor SOAP
 ### Instalacion
 Desde la carpeta principal del proyecto.
