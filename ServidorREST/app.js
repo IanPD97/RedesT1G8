@@ -44,6 +44,17 @@ app.get('/verificarRUT', (req, res) => {
   }
 });
 
+app.get('/nombrePropio', (req, res) => {
+  const datos = req.body;
+  if (datos.nombre === undefined || datos.apellidoPaterno === undefined || datos.apellidoMaterno === undefined || datos.sexo === undefined) {
+    console.log("ERROR GET sin datos necesarios para generar nombre propio");
+    res.status(400).send('No se enviaron parametros necesarios (nombre, apellido paterno, apellido materno y sexo)');
+  }
+  else {
+    res.send(generarNombrePropio(datos));
+  }
+});
+
 app.listen(puerto, function () {
   console.log('servidor iniciado en puerto:', puerto);
 });
