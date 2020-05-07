@@ -3,6 +3,7 @@ module.exports = {
   verificarDigito: ({ rut }) => {
     let multiplicador = 2;
     const suma = rut
+      .toString()
       .split('')
       .reverse()
       .map(digito => { if (multiplicador === 7) multiplicador = 2; return digito * (multiplicador++) })
