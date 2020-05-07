@@ -28,6 +28,10 @@
 *.a
 *.lib
 
+frontend_soap/
+ServidorREST/
+ServidorSOAP/
+
 # Executables
 *.exe
 *.out
