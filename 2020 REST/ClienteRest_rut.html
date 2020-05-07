@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cliente REST rut</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width-device width, initial scale=1.0">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script src="metodos.js"></script>
+
+</head>
+
+<body>
+	<h1>Ingrese los datos de su RUT</h1>
+	<form name="form2" id="form2" method="get" action="servidor.php"> 
+		    	<p>Ingrese RUT: </p>
+		    	<input type="text" name="rut" id="rut" placeholder="Ej: 19777888" onkeypress="return solonumeros(event)" class="field" maxlength="8" required> - 
+		      	<select name="dig_verif" id="dig_verif">
+				    <optgroup label="Dígito verificador" >
+				      	<option>1</option>
+				      	<option>2</option>
+				      	<option>3</option>
+				      	<option>4</option>
+				      	<option>5</option>
+				      	<option>6</option>
+				      	<option>7</option>
+				      	<option>8</option>
+				      	<option>9</option>
+				      	<option>K</option>
+				     </optgroup>
+				</select>
+		    <p class="center-content">
+			    <tr>
+			      <td align="center"><input type="submit" name="enviar" id="enviar" class="btn btn-green" value="Enviar"></td>
+			    </tr>
+		    </p>
+	</form>	
+</body>
+</html>
