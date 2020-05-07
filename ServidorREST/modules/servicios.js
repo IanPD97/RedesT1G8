@@ -2,16 +2,19 @@ module.exports = {
 
   verificarDigito: ({ rut }) => {
     let multiplicador = 2;
-    const suma = rut
-      .toString()
+    const rutSeparado = rut.split("-");
+    const suma = rutSeparado[0]
       .split('')
+      .filter(isDigit)
       .reverse()
       .map(digito => { if (multiplicador === 7) multiplicador = 2; return digito * (multiplicador++) })
       .reduce((suma, valor) => { return suma + valor }, 0);
     const modulo = 11 - (suma % 11);
-    if (modulo === 11) return { verificador: 0 };
-    if (modulo === 10) return { verificador: 'K' };
-    return { verificador: modulo };
+    let verificador = modulo;
+    if (modulo === 11) verificador = '0';
+    if (modulo === 10) verificador = 'K';
+
+    return { verificador: (rutSeparado[1] == verificador) };
   },
 
   generarNombrePropio: ({ sexo, nombre, apellidoPaterno, apellidoMaterno }) => {
@@ -27,3 +30,7 @@ module.exports = {
   }
 
 };
+
+function isDigit(n) {
+  return Boolean([true, true, true, true, true, true, true, true, true, true][n]);
+}
