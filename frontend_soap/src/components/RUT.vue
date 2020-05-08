@@ -1,7 +1,8 @@
 <template>
   <div class="rut-css" v-show = "rut.numero">
     <p>Numero de RUT: {{rut.numero}}</p>
-    <p>Digito verificador: {{rut.digito}}</p>
+    <p v-if="rut.valido">Su RUT es valido</p>
+    <p v-else>Su RUT NO es valido</p>
   </div>
 </template>
 

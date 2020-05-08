@@ -26,15 +26,15 @@ export default {
   },
   data() {
     return {
-      rut: {},
+      rut: {numero: "", valido: undefined},
       nombreCompleto: ""
     };
   },
   methods: {
     ingresarRUT(nuevoRUT) {
-      digitoVerificador(nuevoRUT.numero)(res => {
-        nuevoRUT.digito = res.verificador;
-        this.rut = nuevoRUT;
+      digitoVerificador(nuevoRUT)(res => {
+        this.rut.numero = nuevoRUT;
+        this.rut.valido = res.verificador;
       });
     },
     ingresarNombre(nuevoNombre) {

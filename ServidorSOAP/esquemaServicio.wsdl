@@ -4,7 +4,7 @@
     <wsdl:part name="rut" type="xs:string"/>
   </wsdl:message>
   <wsdl:message name="digitoVerificadorResponse">
-    <wsdl:part name="verificador" type="xs:string"/>
+    <wsdl:part name="verificador" type="xs:bool"/>
   </wsdl:message>
   <wsdl:message name="nombrePropioRequest">
     <wsdl:part name="sexo" type="xs:string"/>

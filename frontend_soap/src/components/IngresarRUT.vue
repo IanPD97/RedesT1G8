@@ -4,7 +4,7 @@
       <p>Ingrese RUT sin puntos ni digito verificador</p>
     </div>
     <form @submit.prevent="ingresarRUT">
-      <input type="text" v-model="numero" name="numero" placeholder="Ingrese RUT..." />
+      <input type="text" v-model="entrada" name="entrada" placeholder="Ingrese RUT..." />
       <input type="submit" value="Ingresar" class="btn" />
     </form>
   </div>
@@ -16,19 +16,16 @@ export default {
   name: "IngresarRUT",
   data() {
     return {
-      numero: ""
+      entrada: ""
     };
   },
   methods: {
     ingresarRUT() {
-      if (this.numero === "") return;
-      if (isNaN(this.numero)) return;
-      const nuevoRUT = {
-        numero: this.numero,
-        digito: undefined
-      };
-      this.$emit("ingresar-rut", nuevoRUT);
-      this.numero = "";
+      const rut = this.entrada
+      if (rut === "") return;
+      const rutSeparado = rut.split("-");
+      if (rutSeparado[1] === undefined) return;
+      this.$emit("ingresar-rut", this.entrada);
     }
   }
 };
