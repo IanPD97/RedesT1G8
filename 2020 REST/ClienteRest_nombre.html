@@ -21,7 +21,6 @@
     <p class="center-content"><input type="text" name="apellidoMaterno" class="field" id="apellidoMaterno"
         placeholder="apellidoMaterno" onkeypress="return sololetras(event)" required></p>
 
-
     <p class="center-content">Ingrese sus Nombres: </p>
     <p class="center-content"><input type="text" name="nombre" class="field" id="nombre" placeholder=" nombre1 nombre2"
         onkeypress="return sololetras(event)" required></p>
@@ -69,23 +68,10 @@
       error: function (xhr, ajaxOptions, thrownError) {
         console.log(xhr);
         console.log(thrownError);
-        //alert(xhr.status + " " + thrownError);
       }
     });
 
   });
-
-
-
-
-  /*	$(function() {
-        $('#form1').on('submit', function(e) {
-          e.preventDefault();
-          var jsonData=$(this).serializeArray()
-          .reduce(function(a, z) { a[z.name] = z.value;return a; }, {});
-          console.log(jsonData);
-        });
-    });	*/
 </script>
 
 </html>
