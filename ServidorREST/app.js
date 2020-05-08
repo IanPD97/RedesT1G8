@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
 });
 app.use(express.json())
 
-app.get('/verificarRUT', (req, res) => {
+app.post('/verificarRUT', (req, res) => {
   if (req.body.rut === undefined) {
     console.log("ERROR GET sin rut para digito verificador");
     res.status(400).send('No se envió RUT');
@@ -44,8 +44,10 @@ app.get('/verificarRUT', (req, res) => {
   }
 });
 
-app.get('/nombrePropio', (req, res) => {
+app.post('/nombrePropio', (req, res) => {
   const datos = req.body;
+  console.log(req.body);
+  
   if (datos.nombre === undefined || datos.apellidoPaterno === undefined || datos.apellidoMaterno === undefined || datos.sexo === undefined) {
     console.log("ERROR GET sin datos necesarios para generar nombre propio");
     res.status(400).send('No se enviaron parametros necesarios (nombre, apellido paterno, apellido materno y sexo)');
