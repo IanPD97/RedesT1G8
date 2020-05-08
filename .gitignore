@@ -2,6 +2,8 @@
 *node_modules
 *.directory
 *.d
+.scannerwork
+
 
 # Compiled Object files
 *.slo
