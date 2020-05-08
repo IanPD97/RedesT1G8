@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Servicio REST</title>
+</head>
+<body>
+  <div class="cliente_rest_nombre"></div>
+  <div class="cliente_rest_rut"></div>
+</body>
+
+  <script>
+    $(document).ready(function () {
+      $('.cliente_rest_nombre').load('./ClienteRest_nombre.html');
+      $('.cliente_rest_rut').load('./ClienteRest_rut.html');
+    });
+  </script>
+</html>

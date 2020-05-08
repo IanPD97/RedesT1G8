@@ -1,25 +1,40 @@
-# Servidor REST
+# Trabajo 1 Grupo 8
 
-## Descarga del servidor Wamp o Xampp
+### Integrantes
+- Iván Pérez
+- Sebastián Pérez
+- Ian Poveda
+- Claudio Silva
 
-- Se debe descargar un servidor Wamp o Xampp para poder correr código PHP, configurarlo adecuadamente, aquí un enlace a un tutorial de instalación de servidor Wamp para Windows. Enlace: https://www.youtube.com/watch?v=n6CVi4pBSCE (1) Descargar una versión para PHP desde la 5.4.3 en adelante.
-- Tener presente la carpeta en donde se guardará el servidor, se recomienda en el disco local C
-- Poner Google Chrome como navegador por defecto
-- En caso de que el servidor arroje problemas con el puerto utilizado, en el mismo tutorial de instalación sugerido (1), aparece el método de solución a dicho problema.
+# Requisitos de funcionamiento
+Ambos servidores y el cliente SOAP requieren `Node JS` instalado en el equipo para su funcionamiento, link de [descarga](https://nodejs.org/es/download/).
 
-## Para abrir los archivos PHP y HTML de REST
+# REST
 
-- Una vez instalado el servidor aparecerá una carpeta con el nombre en el disco C, ya sea wamp o xampp, dentro de esta carpeta hay otra con el nombre "www", ahí es donde se deben dejar los proyectos.
-- Descargamos el repositorio de Github a nuestra máquina local.
-- Dejamos la carpeta "2020 REST" en la carpeta "www" del servidor descargado.
-- Entonces para acceder al servidor REST se debe ingresar el URL en el buscador: http://localhost/2020%20REST/servidor.php
-- Para ingresar a los clientes se deben ingresar los siguientes enlaces al buscador:
-- Para el cliente del servisio nombres: http://localhost/2020%20REST/ClienteRest_nombre.html
-- Para el cliente del servicio ruts: http://localhost/2020%20REST/ClienteRest_rut.html
+## Servidor REST
 
-# Servidor SOAP
-## Requisitos
-Tanto el servidor como el cliente requieren `Node JS` instalado en el equipo para su funcionamiento, link de [descarga](https://nodejs.org/es/download/).
+### Instalación
+Desde la carpeta principal del proyecto.
+```
+cd ServidorREST  
+npm install  
+node app.js
+```
+El servidor confirmará el estado de ejecución.
+### Conexión
+
+#### Digito verificador
+Los clientes deben hacer POST a `/verificarRUT` con el siguiente esquema JSON `{rut: <RUT>}`, el procedimiento retorna un objeto `{ verificador: <true|false> }`, en caso de recibir un RUT no valido retorna un error informando el problema.
+
+#### Nombre propio
+Los clientes deben hacer POST a `/nombrePropio` con el siguiente esquema JSON `{ sexo: <'M'/'F'>, nombre: <nombre>, apellidoPaterno: <apellido paterno>, apellidoMaterno: <apellido materno> }`, el procedimiento retorna un objeto `{ nombrePropio: <nombre propio> }`, en caso de recibir algún dato invalido retorna un error informando el problema.
+
+## Ejecución
+Desde la carpeta principal del proyecto, se debe entrar a la carpeta `2020 REST`, luego abrir el archivo `ClientesRest.html` con el navegador.
+
+# SOAP
+
+## Servidor SOAP
 
 ### Instalación
 Desde la carpeta principal del proyecto.
@@ -29,18 +44,27 @@ npm install
 node app.js
 ```
 El servidor confirmará el estado de ejecución.
+
 ### Conexión
-Los clientes deben obtener el archivo WSDL de la dirección `http://localhost:8001/esquemaServicio?wsdl`
+Los clientes deben obtener el archivo WSDL de la dirección `http://localhost:8001/esquemaServicio?wsdl`.
+
 #### Digito verificador
 El procedimiento para obtener el digito verificador se hace mediante la función `digitoVerificador()` el cual recibe como parámetro un objeto `{ rut: <RUT> }`, la función retorna un objeto `{ verificador: <true|false> }`, en caso de recibir un RUT no valido retorna un error informando el problema.
+
 #### Nombre propio
 El procedimiento para obtener un nombre propio se hace mediante la función `nombrePropio()` el cual recibe como parámetro un objeto `{ sexo: <'M'/'F'>, nombre: <nombre>, apellidoPaterno: <apellido paterno>, apellidoMaterno: <apellido materno> }`, la función retorna un objeto `{ nombrePropio: <nombre propio> }`, en caso de recibir algún dato invalido retorna un error informando el problema.
-## Cliente SOAP
+
+# Cliente SOAP
 Cliente del servicio SOAP, permite usar las funcionalidades expuestas por el servicio en el servidor.
-### Instalación
+
+### Instalación y ejecución
+Desde la carpeta principal del proyecto.
 ```
 cd frontend_soap
 npm install
 npm run serve
 ```
+
+### Ejecución
 El cliente viene por defecto configurado para levantar la pagina web en la dirección `http://localhost:8080/ `
+

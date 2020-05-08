@@ -1,13 +1,13 @@
 module.exports = {
 
   verificarDigito: ({ rut }) => {
-    let multiplicador = 2;
+    let multiplicador = 0;
     const rutSeparado = rut.split("-");
     const suma = rutSeparado[0]
       .split('')
       .filter(isDigit)
       .reverse()
-      .map(digito => { if (multiplicador === 7) multiplicador = 2; return digito * (multiplicador++) })
+      .map(digito => {return digito * ( 2 + (multiplicador++) % 6) })
       .reduce((suma, valor) => { return suma + valor }, 0);
     const modulo = 11 - (suma % 11);
     let verificador = modulo;
