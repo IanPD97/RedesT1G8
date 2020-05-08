@@ -1,9 +1,9 @@
 function solonumeros(e){
-	key=e.keyCode || e.which;//almacena la entrada del teclado
-	teclado=String.fromCharCode(key);//almacenar lo que haya en la entrada del teclado
-	numeros='0123456789';
-	especiales='46';
-	teclado_especial=false;
+	let key=e.keyCode || e.which;//almacena la entrada del teclado
+	let teclado=String.fromCharCode(key);//almacenar lo que haya en la entrada del teclado
+	let numeros='0123456789';
+	let especiales='46';
+	let teclado_especial=false;
 	for(var i in especiales){
 		if(key==especiales[i]){
 		teclado_especial=true;
@@ -15,11 +15,11 @@ function solonumeros(e){
 }
 
 function sololetras(e){ 
-	key=e.keyCode || e.which;
-	teclado=String.fromCharCode(key).toLowerCase();
-	letras=" áéíóúabcdefghijklmnñopqrstuvwxyz";
-	especiales="8-37-38-46-163";
-	teclado_especial=false;
+	let key=e.keyCode || e.which;
+	let teclado=String.fromCharCode(key).toLowerCase();
+	let letras=" áéíóúabcdefghijklmnñopqrstuvwxyz";
+	let especiales="8-37-38-46-163";
+	let teclado_especial=false;
 	for(var i in especiales){
 		if(key==especiales[i]){
 			teclado_especial=true;
