@@ -2,7 +2,7 @@ function solonumeros(e){
 	key=e.keyCode || e.which;//almacena la entrada del teclado
 	teclado=String.fromCharCode(key);//almacenar lo que haya en la entrada del teclado
 	numeros='0123456789';
-	especiales="8-37-38-46-163";
+	especiales='46';
 	teclado_especial=false;
 	for(var i in especiales){
 		if(key==especiales[i]){
