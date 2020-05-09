@@ -30,7 +30,7 @@ Los clientes deben hacer POST a `/verificarRUT` con el siguiente esquema JSON `{
 Los clientes deben hacer POST a `/nombrePropio` con el siguiente esquema JSON `{ sexo: <'M'/'F'>, nombre: <nombre>, apellidoPaterno: <apellido paterno>, apellidoMaterno: <apellido materno> }`, el procedimiento retorna un objeto `{ nombrePropio: <nombre propio> }`, en caso de recibir algún dato invalido retorna un error informando el problema.
 
 ## Ejecución
-Desde la carpeta principal del proyecto, se debe entrar a la carpeta `2020 REST`, luego abrir el archivo `ClientesRest.html` con el navegador.
+Desde la carpeta principal del proyecto copiar y pegar la carpeta `2020 REST` en la ruta: C:\wamp\www, del servidor wamp o xampp, luego abrir el archivo `ClientesRest.html` con el navegador.
 
 # SOAP
 
