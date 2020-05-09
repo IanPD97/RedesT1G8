@@ -1,7 +1,7 @@
-function solonumeros(e){
+function solonumeros_k(e){
 	let key=e.keyCode || e.which;//almacena la entrada del teclado
 	let teclado=String.fromCharCode(key);//almacenar lo que haya en la entrada del teclado
-	let numeros='0123456789';
+	let numeros='0123456789.-kK';
 	let especiales='46';
 	let teclado_especial=false;
 	for(var i in especiales){
