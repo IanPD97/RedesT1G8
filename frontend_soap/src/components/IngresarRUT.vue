@@ -1,7 +1,7 @@
 <template>
   <div class="ingresar-rut">
     <div>
-      <p>Ingrese RUT sin puntos ni digito verificador</p>
+      <p>Ingrese RUT con digito verificador</p>
     </div>
     <form @submit.prevent="ingresarRUT">
       <input type="text" v-model="entrada" name="entrada" placeholder="Ingrese RUT..." />
